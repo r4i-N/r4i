@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>出費記録</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div style="text-align: center;">
+        <h1 class="yura">出費記録</h1>
+    </div>
+
+    <div class="card" id="haikei">
+        <h2 class="kiroku">本日の記録</h2>
+        <p class="onegai">記録を入力してください</p>
+                <div class="yokomoji">
+                    <label class="label-text">金額</label>
+                    <input type="number" id="kingaku" class="input-group">
+                    <label class="label-text">内容</label>
+                    <input type="text" id="naiyou" class="input-group">
+                </div>
+                <div class="button2">
+                    <input type="date" class="daytime" id="hiduke">
+                    <button class="kakunin" id="kettei">決定</button>
+                </div>
+    </div>
+
+    <div class="card" id="haikei">
+        <h2 class="kiroku">入力履歴</h2>
+        <p class="onegai">記録の確認</p>
+        <details class="card-accordion">
+            <summary class="kotira">こちらを選択して展開</summary>
+                <div class="button1">
+                    <button class="button-group">先月</button>
+                    <button class="button-group" id="kongetu">今月</button>
+                    <button class="button-group">全データ</button>
+                    <button class="button-group" id="hensyu">編集＆削除</button>
+                </div>
+        </details>
+
+    </div>
+
+    <div id="table">
+    <table class="table1" id="targetTable">
+        <thead>
+            <tr>
+                <th class="oomoji">日付</th>
+                <th class="oomoji">金額</th>
+                <th class="oomoji">内訳</th>
+            </tr>
+        </thead>
+        <tbody id="calenderBody">
+
+        </tbody>
+    </table>
+    </div>
+
+    <div class="card" id="haikei">
+        <h2 class="kiroku">統計データ</h2>
+        <p class="onegai">統計データを確認</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
