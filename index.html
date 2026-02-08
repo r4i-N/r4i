@@ -32,9 +32,9 @@
         <details class="card-accordion">
             <summary class="kotira">こちらを選択して展開</summary>
                 <div class="button1">
-                    <button class="button-group">先月</button>
+                    <button class="button-group" id="lastMonth">先月</button>
                     <button class="button-group" id="kongetu">今月</button>
-                    <button class="button-group">全データ</button>
+                    <button class="button-group" id="select">全データ</button>
                     <button class="button-group" id="hensyu">編集＆削除</button>
                 </div>
         </details>
@@ -55,6 +55,25 @@
         </tbody>
     </table>
     </div>
+
+    <select id="allYear" onchange="renderTable()">
+        <option value="2025">２０２５年</option>
+        <option value="2026" selected>２０２６年</option>
+    </select>
+    <select id="allMonth" onchange="renderTable()">
+        <option value="1">１月</option>
+        <option value="2" selected>２月</option>
+        <option value="3">３月</option>
+        <option value="4">４月</option>
+        <option value="5">５月</option>
+        <option value="6">６月</option>
+        <option value="7">７月</option>
+        <option value="8">８月</option>
+        <option value="9">９月</option>
+        <option value="10">１０月</option>
+        <option value="11">１１月</option>
+        <option value="12">１２月</option>
+    </select>
 
     <div class="card" id="haikei">
         <h2 class="kiroku">統計データ</h2>

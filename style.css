@@ -152,3 +152,12 @@ th{
 #table.open{
     display: flex;
 }
+
+#allMonth,#allYear{
+    display: none;
+}
+
+#allMonth.selectOpen,#allYear.selectOpen{
+    display: flex;
+}
+
