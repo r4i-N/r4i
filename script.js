@@ -5,7 +5,9 @@ const tableBody = document.getElementById("calenderBody")
 const Btn = document.getElementById("kettei")
 const yearFilter = document.getElementById("allYear");
 const monthFilter =document.getElementById("allMonth");
+const deleteBtn = document.getElementById("hensyu");
 let isEditMode = false;
+deleteBtn.disabled= true;
 
 //入力したデータをテーブルに追加　データの保存
 
@@ -113,6 +115,7 @@ Open.addEventListener("click",()=>{
     Calender.classList.toggle("open");
     allYear.classList.remove("selectOpen");
     allMonth.classList.remove("selectOpen");
+    deleteBtn.disabled = !Calender.classList.contains("open");
 })
 //-------------------
 
@@ -129,6 +132,9 @@ lastMonthBtn.addEventListener("click",() => {
     renderTable();
 
     Calender.classList.toggle("open");
+    allYear.classList.remove("selectOpen");
+    allMonth.classList.remove("selectOpen");
+    deleteBtn.disabled = !Calender.classList.contains("open");
 })
 
 
@@ -136,7 +142,6 @@ lastMonthBtn.addEventListener("click",() => {
 
 
 //編集ボタンの追加 データの削除
-const deleteBtn = document.getElementById("hensyu");
 deleteBtn.addEventListener("click",()=>{
     if(isEditMode){
         if(!confirm("編集モードを終了しますか？")) return;
@@ -176,6 +181,22 @@ selectBtn.addEventListener("click",() => {
     if(allYear.classList.contains("selectOpen")){
         Calender.classList.add("open");
     }
+
+    deleteBtn.disabled = !Calender.classList.contains("open");
 });
 //------------------
 
+//スクロール検知からのフッター非表示
+let lastScrollY = window.scrollY;
+const footer = document.querySelector('.footer');
+window.addEventListener('scroll',()=>{
+    if (Math.abs(window.scrollY - lastScrollY) >5) {
+        if(window.scrollY > lastScrollY){
+            footer.classList.add('footerHiden');
+        }else{
+            footer.classList.remove('footerHiden');
+        }
+        lastScrollY = window.scrollY;
+    }
+});
+//------------------

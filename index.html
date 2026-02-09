@@ -21,6 +21,7 @@
                     <input type="text" id="naiyou" class="input-group">
                 </div>
                 <div class="button2">
+                    <label class="label-text">日付</label>
                     <input type="date" class="daytime" id="hiduke">
                     <button class="kakunin" id="kettei">決定</button>
                 </div>
@@ -29,8 +30,8 @@
     <div class="card">
         <h2 class="kiroku">入力履歴</h2>
         <p class="onegai">記録の確認</p>
-        <details class="card-accordion">
-            <summary class="kotira">こちらを選択して展開</summary>
+        <details class="card-accordion" open>
+            <summary class="kotira">閉じる/開く</summary>
                 <div class="button1">
                     <button class="button-group" id="lastMonth">先月</button>
                     <button class="button-group" id="kongetu">今月</button>
@@ -39,6 +40,26 @@
                 </div>
         </details>
 
+    </div>
+    <div class="selectBox">
+        <select id="allYear" onchange="renderTable()" class="selecter">
+            <option value="2025">２０２５年</option>
+            <option value="2026" selected>２０２６年</option>
+        </select>
+        <select id="allMonth" onchange="renderTable()" class="selecter">
+            <option value="1">１月</option>
+            <option value="2" selected>２月</option>
+            <option value="3">３月</option>
+            <option value="4">４月</option>
+            <option value="5">５月</option>
+            <option value="6">６月</option>
+            <option value="7">７月</option>
+            <option value="8">８月</option>
+            <option value="9">９月</option>
+            <option value="10">１０月</option>
+            <option value="11">１１月</option>
+            <option value="12">１２月</option>
+        </select>
     </div>
 
     <div id="table">
@@ -56,28 +77,16 @@
     </table>
     </div>
 
-    <select id="allYear" onchange="renderTable()">
-        <option value="2025">２０２５年</option>
-        <option value="2026" selected>２０２６年</option>
-    </select>
-    <select id="allMonth" onchange="renderTable()">
-        <option value="1">１月</option>
-        <option value="2" selected>２月</option>
-        <option value="3">３月</option>
-        <option value="4">４月</option>
-        <option value="5">５月</option>
-        <option value="6">６月</option>
-        <option value="7">７月</option>
-        <option value="8">８月</option>
-        <option value="9">９月</option>
-        <option value="10">１０月</option>
-        <option value="11">１１月</option>
-        <option value="12">１２月</option>
-    </select>
-
     <div class="card" id="haikei">
         <h2 class="kiroku">統計データ</h2>
         <p class="onegai">統計データを確認</p>
+    </div>
+
+    <div class="footer">
+        <a href="index.html" class="footerBtn">最初の画面へ</a>
+        <button class="footerBtn">あああ</button>
+        <button class="footerBtn">あああ</button>
+        <a href="setting.html" class="footerBtn">設定</a>
     </div>
 
     <script src="script.js"></script>
